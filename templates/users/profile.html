@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<section class="profile-page">
+
+    <div class="container py-5">
+
+        <div class="row justify-content-center">
+
+            <div class="col-lg-8">
+
+                <div class="profile-card">
+
+                    <!-- TOP PROFILE -->
+
+                    <div class="profile-top text-center">
+
+                        <img src="https://www.gravatar.com/avatar/?d=mp&s=200" class="profile-img">
+
+                        <h2 class="mt-4">
+                            {{ request.user.username }}
+                        </h2>
+
+                        <p class="profile-email">
+                            {{ request.user.email }}
+                        </p>
+
+                        <p class="profile-bio">
+                            Future Full Stack Developer 🚀
+                        </p>
+
+                    </div>
+
+                    <!-- stats -->
+
+                    <div class="row text-center mt-5">
+
+                        <div class="col-md-4 mb-3">
+
+                            <div class="profile-stats">
+
+                                <h3>
+                                    12
+                                </h3>
+
+                                <p>
+                                    Courses
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-4 mb-3">
+
+                            <div class="profile-stats">
+
+                                <h3>
+                                    450
+                                </h3>
+
+                                <p>
+                                    Quiz Score
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-4 mb-3">
+
+                            <div class="profile-stats">
+
+                                <h3>
+                                    8
+                                </h3>
+
+                                <p>
+                                    Certificates
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- btn -->
+
+                    <div class="text-center mt-5">
+
+                        <a href="{% url 'edit_profile' %}" class="btn btn-purple">
+                            Edit Profile
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

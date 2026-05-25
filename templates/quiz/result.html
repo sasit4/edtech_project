@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container py-5 text-center">
+
+    <div class="card p-5 shadow">
+
+        <h1>Quiz Completed 🎉</h1>
+
+        <h2 class="mt-4">
+            Your Score: {{ result.score }}
+        </h2>
+
+        {% if result.score >= 3 %}
+
+        <div class="alert alert-success mt-4">
+            Eligible For Certificate 🎓
+        </div>
+
+        <a href="/certificate/" class="btn btn-success mt-3">
+            Download Certificate
+        </a>
+
+        {% else %}
+
+        <div class="alert alert-danger mt-4">
+            Try Again To Earn Certificate
+        </div>
+
+        {% endif %}
+
+    </div>
+
+</div>
+
+{% endblock %}
