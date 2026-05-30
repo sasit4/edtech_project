@@ -1,0 +1,560 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!-- hero section starts -->
+<section class="hero-section">
+
+    <div class="container">
+
+        <div class="row align-items-center min-vh-100">
+
+            <div class="col-lg-6">
+
+                <!-- <h1 class="hero-title">
+                    Learn fast by using smart techniques
+                </h1> -->
+                <h1 class="hero-title">
+                    Learn fast by using <span>smart techniques</span>
+                </h1>
+
+                <p class="hero-text">
+                    Improve your speaking, listening and writing skills with interactive courses.
+                </p>
+
+                <a href="#" onclick="openForm()" class="start-btn btn btn-purple btn-lg">
+                    Start Learning
+                </a>
+
+
+                <!-- Popup form-->
+
+                <div class="popup" id="popup">
+
+                    <div class="popup-content">
+
+                        <!-- CLOSE BUTTON -->
+
+                        <span class="close-btn" onclick="closeForm()">
+                            &times;
+                        </span>
+
+                        <h2>Learning Starts Here✨</h2>
+
+                        <input type="text" placeholder="Please Enter Your Name">
+
+                        <select>
+                            <option>Select Your Level</option>
+                            <option>Beginner</option>
+                            <option>Intermediate</option>
+                            <option>Advanced</option>
+                        </select>
+
+                        <button class="continue-btn" onclick="showSuccess()">
+                            Continue
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+            <div class="col-lg-6 text-center">
+                <img src="{% static 'images/welcome.png' %}" class="img-fluid hero-img mt-3">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- hero section ends -->
+
+
+
+<!-- search section starts-->
+
+<section class="search-section py-5">
+
+    <div class="container text-center">
+
+        <h2 id="heading">Search Courses</h2>
+
+        <div class="search-box mt-4">
+
+            <input type="text" class="form-control" placeholder="Search language courses">
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- search section ends -->
+
+
+
+<!-- power section starts  -->
+
+<section class="smart-learning py-5">
+
+    <div class="container">
+
+        <div class="row align-items-center">
+
+            <!-- LEFT side img -->
+
+            <div class="col-lg-6">
+
+                <div class="image-layout">
+
+                    <!-- Image 1 -->
+                    <div class="img-box img1">
+                        <img src="{% static 'images/brian.png' %}" alt="">
+                    </div>
+
+                    <!-- Image 2 -->
+                    <div class="img-box img2">
+                        <img src="{% static 'images/code.png' %}" alt="">
+                    </div>
+
+                    <!-- Image 3 -->
+                    <div class="img-box img3">
+                        <img src="{% static 'images/404.png' %}" alt="">
+                    </div>
+
+                    <!-- Image 4 -->
+                    <div class="img-box img4">
+                        <img src="{% static 'images/computer.png' %}" alt="">
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- RIGHT side text -->
+
+            <div class="col-lg-6">
+
+                <div class="smart-content">
+
+                    <h2 id="heading">
+                        Power of Learning
+                    </h2>
+
+                    <p>
+                        EdTech makes learning simple and effective using modern technology. It helps students improve
+                        their skills through interactive lessons, videos, and practice activities anytime, anywhere.
+                    </p>
+
+                    <p>
+                        Use technology to make learning easy, fast, and effective.
+                    </p>
+
+                    <a href="#" onclick="showExploreMsg(event)" class="explore-btn btn btn-purple">
+                        Explore More
+                    </a>
+
+                    <p id="msg"></p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- power section ends -->
+
+
+
+{% load static %}
+
+<!-- courses section starts -->
+
+<section class="courses-section">
+
+    <div class="container">
+
+        <h2 class="course-title" id="heading">
+            Popular Courses
+        </h2>
+
+        <div class="course-row">
+
+            <!-- CARD 1 -->
+            <div class="course-card">
+                <img src="{% static 'images/course_AI.png' %}" class="course-img">
+                <!-- <img src="https://via.placeholder.com/300x180" class="course-img"> -->
+
+                <h3>Artificial Intelligence</h3>
+
+                <p>
+                    Machines learn like humans using AI.
+                </p>
+
+                <button class="btn btn-purple" onclick="openModal(
+                'Artificial Intelligence',
+                'AI helps machines learn, think and act like humans. Build chatbots and automation tools.')">
+
+                    Explore
+
+                </button>
+
+            </div>
+
+            <!-- CARD 2 -->
+            <div class="course-card">
+                <img src="{% static 'images/course_python.png' %}" class="course-img">
+
+
+
+                <h3>Python Full Stack</h3>
+
+                <p>
+                    Build complete web apps using Python.
+                </p>
+
+                <button onclick="openModal(
+                'Python Full Stack',
+                'Learn frontend, backend, APIs and databases using Python.')">
+
+                    Explore
+
+                </button>
+
+            </div>
+
+            <!-- CARD 3 -->
+            <div class="course-card">
+                <img src="{% static 'images/course_java.png' %}" class="course-img">
+
+                <h3>Java Full Stack</h3>
+
+                <p>
+                    Enterprise application development.
+                </p>
+
+                <button onclick="openModal(
+                'Java Full Stack',
+                'Develop powerful applications using Java and Spring Boot.')">
+
+                    Explore
+
+                </button>
+
+            </div>
+
+            <!-- CARD 4 -->
+            <div class="course-card">
+                <img src="{% static 'images/course_react.png' %}" class="course-img">
+
+                <h3>React JS</h3>
+
+                <p>
+                    Modern UI development.
+                </p>
+
+                <button onclick="openModal(
+                'React JS',
+                'Build fast interactive UI using React components.')">
+
+                    Explore
+
+                </button>
+
+            </div>
+
+            <!-- CARD 5 -->
+            <div class="course-card">
+                <img src="{% static 'images/course_data_science.png' %}" class="course-img">
+
+                <h3>Data Science</h3>
+
+                <p>
+                    Data analysis and insights.
+                </p>
+
+                <button onclick="openModal(
+                'Data Science',
+                'Learn visualization and machine learning using Python.')">
+
+                    Explore
+
+                </button>
+
+            </div>
+
+            <!-- CARD 6 -->
+            <div class="course-card">
+                <img src="{% static 'images/course_cloud.png' %}" class="course-img">
+
+                <h3>Cloud Computing</h3>
+
+                <p>
+                    Learn AWS and cloud basics.
+                </p>
+
+                <button onclick="openModal(
+                'Cloud Computing',
+                'Learn AWS hosting, storage and deployment models.')">
+
+                    Explore
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- POPUP -->
+
+<div id="courseModal" class="custom-modal">
+
+    <div class="modal-content-box">
+
+        <h2 id="modalTitle"></h2>
+
+        <p id="modalText"></p>
+
+        <button onclick="closeModal()">
+            Close
+        </button>
+
+    </div>
+
+</div>
+
+<!-- courses section ends -->
+
+
+
+<!-- why choose section starts -->
+
+<section class="about-section py-5">
+
+    <div class="container">
+
+        <div class="row align-items-center">
+
+            <div class="col-lg-6">
+
+                <img src="{% static 'images/why_question.png' %}" class="img-fluid why-img">
+
+            </div>
+
+            <div class="col-lg-6">
+
+                <h2 id="heading">Why Choose EdTech?</h2>
+
+                <p>
+                    Learn new skills with expert-designed courses, interactive quizzes, and certificates to boost your
+                    career.
+                </p>
+
+                <ul>
+                    <li>Live Practice</li>
+                    <li>Expert Trainers</li>
+                    <li>Flexible Learning</li>
+                    <li>Online Support</li>
+                    <li>Mock Interviews</li>
+                    <li>Real Project</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- why choose section starts -->
+
+
+
+<!-- review section starts -->
+
+<section class="testimonial-section">
+
+    <div class="container">
+
+        <h2 class="testimonial-title " id="heading">
+            Student Reviews
+        </h2>
+
+        <div class="testimonial-row">
+
+            <!-- CARD 1 -->
+            <div class="testimonial-card">
+
+                <!-- TOP -->
+                <div class="profile-box">
+
+                    <img src="{% static 'images/review_b1.png' %}" class="review-img">
+
+                    <div class="review-text">
+                        <h4>Arjun</h4>
+                        <span>Student</span>
+                    </div>
+
+                </div>
+
+                <!-- STARS -->
+                <div class="stars">
+                    ★★★★★
+                </div>
+
+                <!-- REVIEW -->
+                <p>
+                    EdTech Learning made language learning easy and interactive.
+                </p>
+
+            </div>
+
+            <!-- CARD 2 -->
+            <div class="testimonial-card">
+
+                <div class="profile-box">
+
+                    <img src="{% static 'images/review_g1.png' %}" class="review-img">
+
+                    <div class="review-text">
+                        <h4>Ananya</h4>
+                        <span>Python Developer</span>
+                    </div>
+
+                </div>
+
+                <div class="stars">
+                    ★★★★
+                </div>
+
+                <p>
+                    The quizzes and practical courses helped improve my coding skills.
+                </p>
+
+            </div>
+
+            <!-- CARD 3 -->
+            <div class="testimonial-card">
+
+                <div class="profile-box">
+
+                    <img src="{% static 'images/review_b2.png' %}" class="review-img">
+
+                    <div class="review-text">
+                        <h4>Varun</h4>
+                        <span>UL/UX Learner</span>
+                    </div>
+
+                </div>
+
+                <div class="stars">
+                    ★★★★★
+                </div>
+
+                <p>
+                    The certificate and live practice features motivated me
+                    to learn more..
+                </p>
+
+            </div>
+
+            <!-- CARD 4 -->
+            <div class="testimonial-card">
+
+                <div class="profile-box">
+
+                    <img src="{% static 'images/review_b3.png' %}" class="review-img">
+
+                    <div class="review-text">
+                        <h4>Naveen</h4>
+                        <span>Learner</span>
+                    </div>
+
+                </div>
+
+                <div class="stars">
+                    ★★★★★
+                </div>
+
+                <p>
+                    The leaderboard feature motivated me to improve my quiz score every day.
+                </p>
+
+            </div>
+
+            <!-- CARD 5 -->
+
+            <div class="testimonial-card">
+
+                <div class="profile-box">
+
+                    <img src="{% static 'images/review_g2.png' %}" class="review-img">
+
+                    <div class="review-text">
+                        <h4>Riya</h4>
+                        <span>Web Developer</span>
+                    </div>
+
+                </div>
+
+                <div class="stars">
+                    ★★★★★
+                </div>
+
+                <p>
+                    The interactive courses made learning more interesting and effective.
+                </p>
+
+
+            </div>
+
+            <!-- CARD 6 -->
+
+            <div class="testimonial-card">
+
+                <div class="profile-box">
+
+                    <img src="{% static 'images/review_g3.png' %}" class="review-img">
+
+
+                    <div class="review-text">
+                        <h4>Nisha</h4>
+                        <span>Full Stack Student</span>
+                    </div>
+
+                </div>
+
+                <div class="stars">
+                    ★★★★★
+                </div>
+
+                <p>
+                    Daily practice helped me improve confidence.
+                </p>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- review section starts -->
+
+
+{% endblock %}
