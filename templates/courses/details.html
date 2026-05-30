@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {% extends 'base.html' %}
 
 {% block content %}
@@ -59,4 +60,67 @@
 
 </div>
 
+=======
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container py-5">
+
+    <div class="row">
+
+        <div class="col-md-6">
+            <img src="{{ course.image.url }}" class="img-fluid rounded">
+        </div>
+
+        <div class="col-md-6">
+
+            <h1>{{ course.title }}</h1>
+            <h4>{{ course.instructor }}</h4>
+            <p>{{ course.description }}</p>
+            <h3>₹ {{ course.price }}</h3>
+
+            <p>Duration: {{ course.duration }}</p>
+
+            <a href="/courses/enroll/{{ course.id }}/" class="btn btn-purple">
+                Enroll Now
+            </a>
+            <a href="/quiz/{{ course.id }}/" class="btn btn-warning">
+                Start Quiz
+            </a>
+
+        </div>
+
+    </div>
+
+    <hr>
+
+    <h3>Related Courses</h3>
+
+    <div class="row">
+
+        {% for item in related_courses %}
+
+        <div class="col-md-4">
+            <div class="card shadow">
+                <img src="{{ item.image.url }}" class="card-img-top">
+                <div class="card-body">
+                    <h5>{{ item.title }}</h5>
+                </div>
+            </div>
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+    <p>Students Enrolled: {{ course.students.count }}</p>
+
+    <button id="fav-btn" class="btn btn-danger">
+        ❤ Favorite
+    </button>
+
+</div>
+
+>>>>>>> 32677c0ee0bba3b3a536a8c6177a6e7f80d801a8
 {% endblock %}

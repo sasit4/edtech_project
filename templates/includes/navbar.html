@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 <div class="container">
 
@@ -32,4 +33,40 @@
     </div>
 
 </div>
+=======
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<div class="container">
+
+    <a class="navbar-brand" href="/">EdTech Learning <i class="fa-sharp fa-solid fa-book-open-reader" style="color: rgb(255, 255, 255);"></i></a>
+
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navMenu">
+
+        <ul class="navbar-nav ms-auto">
+
+            <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="/courses/">Courses</a></li>
+            <li class="nav-item"><a class="nav-link" href="/quiz/leaderboard/">Leaderboard</a></li>
+
+            {% if request.user.is_authenticated %}
+
+            <li class="nav-item"><a class="nav-link" href="/users/dashboard/">Dashboard</a></li>
+            <li class="nav-item"><a class="nav-link" href="/users/logout/">Logout</a></li>
+
+            {% else %}
+
+            <li class="nav-item"><a class="nav-link" href="/users/login/">Login</a></li>
+            <li class="nav-item"><a class="nav-link" href="/users/register/">Register</a></li>
+
+            {% endif %}
+
+        </ul>
+
+    </div>
+
+</div>
+>>>>>>> 32677c0ee0bba3b3a536a8c6177a6e7f80d801a8
 </nav>

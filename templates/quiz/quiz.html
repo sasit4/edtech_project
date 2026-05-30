@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {% extends 'base.html' %}
 
 {% block content %}
@@ -94,4 +95,102 @@
 
 </div>
 
+=======
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<div class="alert alert-danger text-center">
+
+    Time Left:
+    <span id="timer">60</span> Seconds
+
+</div> 
+
+
+<div class="container py-5">
+
+    <h1>{{ quiz.title }}</h1>
+
+    <form method="POST">
+
+        {% csrf_token %}
+
+        {% for question in questions %}
+
+        <div class="card p-4 mb-4">
+
+            <h5>
+                {{ question.question }}
+            </h5>
+
+            <div>
+
+                <input type="radio"
+                name="{{ question.id }}"
+                value="{{ question.option1 }}">
+
+                {{ question.option1 }}
+
+            </div>
+
+            <div>
+
+                <input type="radio"
+                name="{{ question.id }}"
+                value="{{ question.option2 }}">
+
+                {{ question.option2 }}
+
+            </div>
+
+            <div>
+
+                <input type="radio"
+                name="{{ question.id }}"
+                value="{{ question.option3 }}">
+
+                {{ question.option3 }}
+
+            </div>
+
+            <div>
+
+                <input type="radio"
+                name="{{ question.id }}"
+                value="{{ question.option4 }}">
+
+                {{ question.option4 }}
+
+            </div>
+
+        </div>
+
+        {% endfor %}
+
+        <button class="btn btn-purple">
+
+            Submit Quiz
+
+        </button>
+
+    </form>
+
+</div>
+
+
+
+<div class="progress mb-4">
+
+    <div class="progress-bar"
+    style="width:70%">
+
+        Quiz Progress
+
+    </div>
+
+</div>
+
+>>>>>>> 32677c0ee0bba3b3a536a8c6177a6e7f80d801a8
 {% endblock %}

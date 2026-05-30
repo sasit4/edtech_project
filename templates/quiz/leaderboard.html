@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {% extends 'base.html' %}
 
 {% block content %}
@@ -68,4 +69,76 @@
 
 </div>
 
+=======
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container py-5">
+
+    <div class="leaderboard-box">
+
+        <h1 class="leaderboard-title text-center mb-5">
+            🏆 Leaderboard
+        </h1>
+
+        <div class="table-responsive">
+
+            <table class="table leaderboard-table align-middle">
+
+                <thead>
+
+                    <tr>
+                        <th>Rank</th>
+                        <th>User</th>
+                        <th>Score</th>
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    {% for leader in leaders %}
+
+                    <tr>
+
+                        <td>
+                            {% if forloop.counter == 1 %}
+                                🥇
+                            {% elif forloop.counter == 2 %}
+                                🥈
+                            {% elif forloop.counter == 3 %}
+                                🥉
+                            {% elif forloop.counter == 4 %}
+                            4️⃣
+                            {% elif forloop.counter == 5 %}
+                            5️⃣
+                            {% else %}
+                                #{{ forloop.counter }}
+                            {% endif %}
+                        </td>
+
+                        <td>{{ leader.user.username }}</td>
+
+                        <td>
+                            <span class="score-badge">
+                                {{ leader.score }}
+                            </span>
+                        </td>
+
+                    </tr>
+
+                    {% endfor %}
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</div>
+
+>>>>>>> 32677c0ee0bba3b3a536a8c6177a6e7f80d801a8
 {% endblock %}
