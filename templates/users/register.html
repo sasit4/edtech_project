@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 {% extends 'base.html' %}
 
 {% block content %}
@@ -46,53 +46,4 @@
 
 </section>
 
-=======
-{% extends 'base.html' %}
-
-{% block content %}
-
-<section class="register-page">
-
-    <div class="container py-5">
-
-        <div class="row justify-content-center align-items-center min-vh-100">
-
-            <div class="col-lg-5 col-md-7 col-12">
-
-                <div class="register-box">
-
-                    <h2 class="register-heading text-center">
-                        Create Account ✨
-                    </h2>
-
-                    <p class="text-center register-text mb-4">
-                        Start your smart learning journey today
-                    </p>
-
-                    <form method="POST" class="register-form">
-
-                        {% csrf_token %}
-
-                        {{ form.as_p }}
-
-                        <button type="submit"
-                        class="btn  w-100 mt-3 btn-purple">
-
-                            Create Account
-
-                        </button>
-
-                    </form>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
->>>>>>> 32677c0ee0bba3b3a536a8c6177a6e7f80d801a8
 {% endblock %}

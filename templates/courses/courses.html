@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 {% extends 'base.html' %}
 
 {% block content %}
@@ -54,61 +54,5 @@
 
 </div>
 
-=======
-{% extends 'base.html' %}
 
-{% block content %}
-
-<div class="container py-5">
-     <h2 class="login-title">Courses</h2>
-
-     <form method="GET" class="mb-4">
-        <input type="text" name="q" class="form-control" placeholder="Search courses">
-    </form> 
-
-    <div class="mb-4">
-        {% for cat in categories %}
-            <a href="?category={{ cat.id }}" class="btn btn-outline-dark">
-                {{ cat.name }}
-            </a>
-        {% endfor %}
-    </div>
-
-    <div class="row g-4">
-
-        {% for course in courses %}
-
-        <div class="col-md-4">
-
-            <div class="card shadow">
-
-                <img src="{{ course.image.url }}" class="card-img-top">
-
-                <div class="card-body">
-
-                    <h4>{{ course.title }}</h4>
-                    <p>{{ course.instructor }}</p>
-                    <h5>₹ {{ course.price }}</h5>
-
-                    <a href="/courses/{{ course.id }}/" class="btn btn-purple">
-                        View Details
-                    </a>
-
-                </div>
-
-            </div>
-
-        </div>
-
-        {% empty %}
-
-        <p>No courses found</p>
-
-        {% endfor %}
-
-    </div>
-
-</div>
-
->>>>>>> 32677c0ee0bba3b3a536a8c6177a6e7f80d801a8
 {% endblock %}

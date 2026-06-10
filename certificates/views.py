@@ -1,94 +1,4 @@
-<<<<<<< HEAD
-from django.http import HttpResponse
-from reportlab.pdfgen import canvas
-from reportlab.lib.colors import navy, gold, black
-from reportlab.lib.pagesizes import letter
 
-
-def generate_certificate(request):
-
-    response = HttpResponse(content_type='application/pdf')
-    response['Content-Disposition'] = 'attachment; filename="certificate.pdf"'
-
-    p = canvas.Canvas(response, pagesize=letter)
-
-    width, height = letter
-
-    # Outer border
-    p.setStrokeColor(navy)
-    p.setLineWidth(8)
-    p.rect(30, 30, width - 60, height - 60)
-
-    # Inner border
-    p.setStrokeColor(gold)
-    p.setLineWidth(3)
-    p.rect(50, 50, width - 100, height - 100)
-
-    # Certificate title
-    p.setFont("Helvetica-Bold", 32)
-    p.setFillColor(navy)
-    p.drawCentredString(width / 2, 700, "CERTIFICATE")
-
-    p.setFont("Helvetica", 20)
-    p.setFillColor(black)
-    p.drawCentredString(width / 2, 660, "OF COMPLETION")
-
-    # Subtitle
-    p.setFont("Helvetica", 16)
-    p.drawCentredString(
-        width / 2,
-        600,
-        "This certificate is proudly presented to"
-    )
-
-    # Student name
-    p.setFont("Helvetica-Bold", 30)
-    p.setFillColor(gold)
-    p.drawCentredString(
-        width / 2,
-        540,
-        request.user.username
-    )
-
-    # Course completion text
-    p.setFillColor(black)
-    p.setFont("Helvetica", 16)
-    p.drawCentredString(
-        width / 2,
-        490,
-        "For Successfully Completing the Course"
-    )
-
-    # Platform name
-    p.setFont("Helvetica-Bold", 22)
-    p.setFillColor(navy)
-    p.drawCentredString(
-        width / 2,
-        440,
-        "EdTech Learning Platform"
-    )
-
-    # Signature lines
-    p.line(120, 180, 250, 180)
-    p.line(360, 180, 500, 180)
-
-    p.setFont("Helvetica", 14)
-    p.setFillColor(black)
-
-    p.drawString(150, 160, " Mentor")
-    p.drawString(410, 160, " Head")
-
-    # Footer Text
-    p.setFont("Helvetica-Oblique", 12)
-    p.drawCentredString(
-        width / 2,
-        100,
-        "Keep Learning • Keep Growing"
-    )
-
-    p.save()
-
-=======
 from django.http import HttpResponse
 from reportlab.pdfgen import canvas
 from reportlab.lib.colors import navy, gold, black
@@ -178,5 +88,5 @@ def generate_certificate(request):
 
     p.save()
 
->>>>>>> 32677c0ee0bba3b3a536a8c6177a6e7f80d801a8
+
     return response
